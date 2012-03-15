@@ -69,6 +69,7 @@ InputState::InputState(void) {
 	binding_alt[SHIFT] = SDLK_RSHIFT;
 	binding[DEL] = SDLK_DELETE;
 	binding_alt[DEL] = SDLK_BACKSPACE;
+	binding[PAUSE] = SDLK_PAUSE;
 	
 	for (int key=0; key<key_count; key++) {
 		pressing[key] = false;

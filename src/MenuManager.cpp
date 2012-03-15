@@ -144,6 +144,12 @@ void MenuManager::logic() {
 		}
 	}
 
+	// pause toggle
+	if ((inp->pressing[PAUSE] && !inp->lock[PAUSE] && !key_lock && !dragging)) {
+		inp->lock[PAUSE] = true;
+		pause = !pause;
+	}
+
 	// inventory menu toggle
 	if ((inp->pressing[INVENTORY] && !key_lock && !dragging) || clicking_inventory) {
 		key_lock = true;

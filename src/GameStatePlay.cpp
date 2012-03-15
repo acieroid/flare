@@ -62,6 +62,10 @@ GameStatePlay::GameStatePlay() : GameState() {
 	// display the name of the map in the upper-right hand corner
 	label_mapname = new WidgetLabel();
 
+	// display a message if the game is paused
+	label_pause = new WidgetLabel();
+	label_pause->set(VIEW_W/2, VIEW_H/2, JUSTIFY_CENTER, VALIGN_TOP, msg->get("The game is paused"), FONT_WHITE);
+
 	label_fps = new WidgetLabel();
 }
 
@@ -472,7 +476,11 @@ void GameStatePlay::render() {
 	// display the name of the map in the upper-right hand corner
 	label_mapname->set(VIEW_W-2, 2, JUSTIFY_RIGHT, VALIGN_TOP, map->title, FONT_WHITE);
 	label_mapname->render();
-	
+
+	// display a message if the game is paused
+	if (menu->pause)
+		label_pause->render();
+
 	// mouseover tooltips
 	loot->renderTooltips(map->cam);
 	npcs->renderTooltips(map->cam, inp->mouse);

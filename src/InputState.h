@@ -37,31 +37,35 @@ FLARE.  If not, see http://www.gnu.org/licenses/
 
 
 // Input commands enum
-const int CANCEL = 0;
-const int ACCEPT = 1;
-const int UP = 2;
-const int DOWN = 3;
-const int LEFT = 4;
-const int RIGHT = 5;
-const int BAR_1 = 6;
-const int BAR_2 = 7;
-const int BAR_3 = 8;
-const int BAR_4 = 9;
-const int BAR_5 = 10;
-const int BAR_6 = 11;
-const int BAR_7 = 12;
-const int BAR_8 = 13;
-const int BAR_9 = 14;
-const int BAR_0 = 15;
-const int CHARACTER = 16;
-const int INVENTORY = 17;
-const int POWERS = 18;
-const int LOG = 19;
-const int MAIN1 = 20;
-const int MAIN2 = 21;
-const int CTRL = 22;
-const int SHIFT = 23;
-const int DEL = 24;
+enum {
+	CANCEL,
+	ACCEPT,
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT,
+	BAR_1,
+	BAR_2,
+	BAR_3,
+	BAR_4,
+	BAR_5,
+	BAR_6,
+	BAR_7,
+	BAR_8,
+	BAR_9,
+	BAR_0,
+	CHARACTER,
+	INVENTORY,
+	POWERS,
+	LOG,
+	MAIN1,
+	MAIN2,
+	CTRL,
+	SHIFT,
+	DEL,
+	PAUSE,
+	LAST_KEY
+};
 
 /**
  * class InputState
@@ -71,7 +75,7 @@ const int DEL = 24;
 
 class InputState {
 private:
-	static const int key_count = 25;
+	static const int key_count = LAST_KEY;
 	int binding[key_count];
 	int binding_alt[key_count];
 public:

@@ -64,6 +64,7 @@ private:
 	QuestLog *quests;
 
 	WidgetLabel *label_mapname;
+	WidgetLabel *label_pause;
 	WidgetLabel *label_fps;
 	
 	bool restrictPowerUse();
